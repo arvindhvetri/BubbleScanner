@@ -38,3 +38,12 @@ BubbleScan is a React + Django application that scans bubble answer sheets (OMR-
 ![3 StudentsResponse](https://github.com/user-attachments/assets/e7a3cef9-5a06-4775-aa64-2872f7dee31e)
 ![4 ScoreTable](https://github.com/user-attachments/assets/49005a33-978d-4b09-ac5f-90cb6dad8207)
 ![5 SubjectAnalysis](https://github.com/user-attachments/assets/4d4c004f-df97-4ebe-82b3-086af1d93f81)
+
+---
+
+### 📬 Contact
+
+Created with ❤️ by Arvindh Kumar
+
+- 📧 Email: arvindhvetri@gmail.com
+
