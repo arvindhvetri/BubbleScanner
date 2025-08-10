@@ -32,3 +32,5 @@ BubbleScan is a React + Django application that scans bubble answer sheets (OMR-
 | Others   | Pillow (image processing), Pandas (data handling) |
 
 ## 📸 Output
+[BubbleScanner.pdf](https://github.com/user-attachments/files/21704612/BubbleScanner.pdf)
+
