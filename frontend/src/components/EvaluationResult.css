@@ -1,0 +1,198 @@
+/* components/EvaluationResult.css - Vertical Scroll Layout */
+
+body, #root {
+font-family: 'Inter', sans-serif;
+background-color: #eef2f7;
+margin: 0;
+padding: 0;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+overflow-x: hidden; /* Prevents horizontal scrollbar on the body */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+width: 10px;
+height: 10px;
+}
+
+::-webkit-scrollbar-track {
+background: #cfd8dc;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+background: #78909c;
+border-radius: 10px;
+border: 2px solid #cfd8dc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #546e7a;
+}
+
+/* Main container for vertically scrolling charts */
+.evaluation-dashboard-container {
+display: flex;
+flex-direction: column;
+
+/* Key changes for vertical scrolling: */
+height: 65vh; /* Set a specific height, e.g., 90% of the viewport height */
+overflow-y: auto; /* Enable vertical scrolling */
+-webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS devices */
+
+padding: 20px;
+margin: 20px auto;
+max-width: 1390px; /* Set a max-width for better desktop layout */
+width: 90%; /* Adjust width to fit */
+box-sizing: border-box; /* Include padding and border in the element's total width and height */
+
+background: linear-gradient(135deg, #e0f2f7 0%, #f0f8ff 100%);
+border-radius: 20px;
+box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+
+animation: fadeInScale 0.8s ease-out forwards;
+transform: scale(1);
+}
+
+/* Keyframe Animation */
+@keyframes fadeInScale {
+from {
+opacity: 0;
+transform: scale(0.95) translateY(20px);
+}
+to {
+opacity: 1;
+transform: scale(1) translateY(0);
+}
+}
+
+/* Chart section cards */
+.chart-section {
+width: 95%;
+height: 55vh;
+margin-bottom: 24px;
+flex-shrink: 0; /* Prevents chart sections from shrinking */
+
+background-color: #ffffff;
+border-radius: 12px;
+border: 1px solid rgba(0, 0, 0, 0.08);
+box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+padding: 20px;
+overflow: hidden;
+position: relative;
+
+transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.chart-section:last-child {
+margin-bottom: 0;
+}
+
+.chart-section:hover {
+box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+transform: translateY(-5px) scale(1.01);
+border-color: rgba(99, 102, 241, 0.3);
+}
+
+/* Chart title */
+.chart-section h2 {
+position: relative;
+padding-bottom: 15px;
+font-weight: 700;
+color: #334155;
+text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+text-align: left;
+}
+
+.chart-section h2::after {
+content: '';
+position: absolute;
+left: 0;
+bottom: 0;
+width: 60px;
+height: 4px;
+background-color: #6366F1;
+border-radius: 2px;
+transition: width 0.3s ease-in-out;
+}
+
+.chart-section:hover h2::after {
+width: 80px;
+}
+
+/* Color underline overrides */
+.chart-section h2 .text-yellow-500 + span::after { background-color: #FBBF24; }
+.chart-section h2 .text-indigo-500 + span::after { background-color: #6366F1; }
+.chart-section h2 .text-purple-500 + span::after { background-color: #A78BFA; }
+.chart-section h2 .text-teal-500 + span::after { background-color: #2DD4BF; }
+.chart-section h2 .text-green-500 + span::after { background-color: #34D399; }
+
+/* Dashboard title block */
+.dashboard-title-block {
+text-align: center;
+margin-bottom: 2rem;
+max-width: 800px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.dashboard-title-block h1 {
+margin-bottom: 0.5rem;
+font-size: 2.5rem;
+line-height: 1.2;
+}
+
+.dashboard-title-block p {
+margin-top: 0.5rem;
+font-size: 1.1rem;
+line-height: 1.5;
+color: #475569;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.evaluation-dashboard-container {
+padding: 15px;
+margin: 20px auto;
+border-radius: 15px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.chart-section {
+padding: 15px;
+margin-bottom: 20px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.chart-section:hover {
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+transform: translateY(-3px) scale(1.005);
+}
+
+.chart-section h2 {
+font-size: 1.5rem;
+padding-bottom: 10px;
+}
+
+.chart-section h2::after {
+width: 40px;
+height: 3px;
+}
+
+.chart-section:hover h2::after {
+width: 60px;
+}
+
+.dashboard-title-block {
+margin-bottom: 1.5rem;
+}
+
+.dashboard-title-block h1 {
+font-size: 2rem;
+}
+
+.dashboard-title-block p {
+font-size: 1rem;
+}
+}

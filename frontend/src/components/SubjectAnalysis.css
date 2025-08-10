@@ -1,0 +1,158 @@
+/* SubjectAnswers.css - Polished Version */
+
+.subject-analysis-container {
+    padding: 15px; /* Increased padding */
+    background: linear-gradient(135deg, #f0f8ff 0%, #e0f2f7 100%); /* Soft, light blue gradient */
+    font-family: 'Inter', sans-serif; /* Consistent modern font */
+    min-height: 75vh; /* Ensure it takes a good portion of the viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    box-sizing: border-box;
+    border-radius: 16px; /* Rounded corners for the container */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); /* Soft, deep shadow */
+}
+
+.analysis-heading {
+    text-align: center;
+    font-size: 2.4rem; /* Larger, more impactful heading */
+    color: #2c3e50; /* Dark text for good contrast */
+    margin-bottom: 30px; /* More space below heading */
+    font-weight: 800; /* Extra bold */
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15); /* Soft text shadow */
+    position: relative;
+    padding-bottom: 12px; /* Space for underline effect */
+}
+
+.analysis-heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 100px; /* Wider underline */
+    height: 5px; /* Thicker underline */
+    background-color: #61dafb; /* React blue accent */
+    border-radius: 3px;
+}
+
+.table-scroll-wrapper {
+    width: 100%;
+    max-width: 1300px; /* Max width for large screens */
+    overflow-x: auto; /* Horizontal scroll for wide tables */
+    overflow-y: auto; /* Vertical scroll for many rows */
+    max-height: 55vh; /* Max height for vertical scrolling */
+    border-radius: 12px; /* Consistent rounded corners */
+    background-color: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Soft shadow for the table wrapper */
+    margin-bottom: 20px; /* Space below table wrapper */
+}
+
+.analysis-table {
+    width: 100%;
+    border-collapse: separate; /* Allows border-radius on cells */
+    border-spacing: 0; /* Remove space between cell borders */
+    min-width: 900px; /* Minimum width to prevent squishing */
+    font-size: 0.95rem; /* Slightly larger font for readability */
+    color: #34495e; /* Dark text for content */
+}
+
+.analysis-table th,
+.analysis-table td {
+    border-bottom: 1px solid #eef2f7; /* Lighter, subtle horizontal borders */
+    border-right: 1px solid #eef2f7; /* Lighter, subtle vertical borders */
+    padding: 12px 14px; /* More padding for better spacing */
+    text-align: center;
+    white-space: nowrap; /* Keep content on one line */
+}
+
+.analysis-table th {
+    background: linear-gradient(90deg, #4a90e2 0%, #61dafb 100%); /* Blue to light blue gradient for headers */
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 3; /* Higher z-index for sticky header */
+    font-weight: 700; /* Bolder header text */
+    text-transform: uppercase; /* Uppercase for headers */
+    letter-spacing: 0.7px;
+}
+
+/* Rounded corners for table header */
+.analysis-table th:first-child {
+    border-top-left-radius: 12px;
+}
+
+.analysis-table th:last-child {
+    border-top-right-radius: 12px;
+    border-right: none; /* Remove right border for the last header cell */
+}
+
+.analysis-table tr:nth-child(even) {
+    background-color: #f8faff; /* Very light blue for even rows */
+}
+
+.analysis-table tr:hover {
+    background-color: #e6f7ff; /* Lighter blue highlight on hover */
+    transition: background-color 0.2s ease;
+}
+
+/* Remove bottom border for the last row */
+.analysis-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.download-button {
+  /* Existing button styles */
+  margin-right: 15px; /* Adds space to the right of each button */
+}
+
+.download-button:last-child {
+  margin-right: 0; /* Removes the margin from the last button */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .subject-analysis-container {
+        padding: 20px 15px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        min-height: unset; /* Allow height to adjust on small screens */
+    }
+
+    .analysis-heading {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        padding-bottom: 8px;
+    }
+
+    .analysis-heading::after {
+        width: 60px;
+        height: 3px;
+    }
+
+    .table-scroll-wrapper {
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        max-height: 60vh; /* Adjusted max-height for smaller screens */
+    }
+
+    .analysis-table {
+        font-size: 0.85rem;
+        min-width: unset; /* Allow table to shrink more on small screens */
+    }
+
+    .analysis-table th,
+    .analysis-table td {
+        padding: 10px 12px;
+    }
+
+    .analysis-table th:first-child {
+        border-top-left-radius: 8px;
+    }
+
+    .analysis-table th:last-child {
+        border-top-right-radius: 8px;
+    }
+
+}

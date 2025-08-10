@@ -1,0 +1,172 @@
+/* ScoreTable.css - Polished Version */
+
+.score-table-container {
+    padding: 15px; /* Increased padding */
+    background: linear-gradient(135deg, #f8faff 0%, #e0f2f7 100%); /* Soft, light gradient */
+    border-radius: 16px; /* More rounded corners */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Deeper, softer shadow */
+    font-family: 'Inter', sans-serif; /* Consistent with other components */
+    min-height: 75vh; /* Ensure it takes a good portion of the viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    box-sizing: border-box;
+}
+
+.score-table-heading {
+    text-align: center;
+    font-size: 2.4rem; /* Larger, more impactful heading */
+    color: #2c3e50; /* Darker text for contrast */
+    margin-bottom: 30px; /* More space below heading */
+    font-weight: 800; /* Extra bold */
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15); /* Slightly stronger text shadow */
+    position: relative;
+    padding-bottom: 12px; /* Space for underline effect */
+}
+
+.score-table-heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 100px; /* Wider underline */
+    height: 5px; /* Thicker underline */
+    background-color: #61dafb; /* React blue accent */
+    border-radius: 3px;
+}
+
+.score-table-wrapper {
+    width: 100%;
+    max-width: 1300px; /* Slightly wider max-width for more columns */
+    overflow-x: auto; /* Horizontal scroll for wide tables */
+    border-radius: 12px; /* Consistent rounded corners */
+    max-height: 55vh; /* Adjusted max-height to fit content */
+    overflow-y: auto; /* Vertical scroll for many rows */
+    border: none; /* Remove default border */
+    background-color: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Soft shadow for the table wrapper */
+    margin-bottom: 20px; /* Space below table wrapper */
+}
+
+.score-table {
+    width: 100%;
+    border-collapse: separate; /* Allows border-radius on cells */
+    border-spacing: 0; /* Remove space between cell borders */
+    font-size: 0.95rem; /* Slightly larger font for readability */
+    color: #34495e; /* Dark text for content */
+}
+
+.score-table th,
+.score-table td {
+    border-bottom: 1px solid #eef2f7; /* Lighter, subtle horizontal borders */
+    border-right: 1px solid #eef2f7; /* Lighter, subtle vertical borders */
+    padding: 12px 14px; /* More padding for better spacing */
+    text-align: center;
+    white-space: nowrap; /* Keep content on one line */
+}
+
+.score-table th {
+    background: linear-gradient(90deg, #4a90e2 0%, #61dafb 100%); /* Blue to light blue gradient for headers */
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 3; /* Higher z-index for sticky header */
+    font-weight: 700; /* Bolder header text */
+    text-transform: uppercase; /* Uppercase for headers */
+    letter-spacing: 0.7px;
+}
+
+/* Rounded corners for table header */
+.score-table th:first-child {
+    border-top-left-radius: 12px;
+}
+
+.score-table th:last-child {
+    border-top-right-radius: 12px;
+    border-right: none; /* Remove right border for the last header cell */
+}
+
+.score-table tr:nth-child(even) {
+    background-color: #f8faff; /* Very light blue for even rows */
+}
+
+.score-table tr:hover {
+    background-color: #e6f7ff; /* Lighter blue highlight on hover */
+    transition: background-color 0.2s ease;
+}
+
+.score-table td:first-child {
+    font-weight: 600;
+    color: #2c3e50; /* Darker color for the first column */
+    background-color: #fcfdff; /* Slightly different background for sticky column */
+    position: sticky; /* Make first column sticky */
+    left: 0;
+    z-index: 2; /* Ensure it's above other cells but below sticky header */
+    border-right: 1px solid #eef2f7; /* Ensure sticky column has right border */
+}
+
+/* Adjust sticky column background on hover of the row */
+.score-table tbody tr:hover td:first-child {
+    background-color: #dbeaff; /* Slightly darker sticky column on row hover */
+}
+
+/* Remove bottom border for the last row */
+.score-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.download-button {
+  /* Existing button styles */
+  margin-right: 15px; /* Adds space to the right of each button */
+}
+
+.download-button:last-child {
+  margin-right: 0; /* Removes the margin from the last button */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .score-table-container {
+        padding: 20px 15px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        min-height: unset; /* Allow height to adjust on small screens */
+    }
+
+    .score-table-heading {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        padding-bottom: 8px;
+    }
+
+    .score-table-heading::after {
+        width: 60px;
+        height: 3px;
+    }
+
+    .score-table-wrapper {
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+        max-height: 60vh; /* Adjusted max-height for smaller screens */
+    }
+
+    .score-table {
+        font-size: 0.85rem;
+        min-width: unset; /* Allow table to shrink more on small screens */
+    }
+
+    .score-table th,
+    .score-table td {
+        padding: 10px 12px;
+    }
+
+    .score-table th:first-child {
+        border-top-left-radius: 8px;
+    }
+
+    .score-table th:last-child {
+        border-top-right-radius: 8px;
+    }
+}

@@ -1,0 +1,130 @@
+/* components/Sidebar.css - Enhanced Version */
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* Using Inter for a modern look */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f0f2f5; /* Light background for the overall page */
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh; /* Use min-height to ensure it covers full viewport height */
+    overflow: hidden; /* Prevent body scroll if content overflows */
+}
+
+.sidebar {
+    width: 260px; /* Slightly wider for better spacing */
+    background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%); /* Darker, subtle gradient */
+    color: #ecf0f1; /* Lighter text for contrast */
+    padding: 30px 20px; /* More padding */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    border-right: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle separator */
+    transition: width 0.3s ease-in-out; /* Smooth transition for potential future collapse */
+}
+
+.sidebar-title {
+    font-size: 1.8em; /* Slightly larger title */
+    font-weight: 700; /* Bolder title */
+    margin-bottom: 30px; /* More space below title */
+    color: #61dafb; /* React blue accent */
+    text-align: center; /* Center the title */
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Soft text shadow */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Allows list to take available space */
+}
+
+.sidebar ul li {
+    margin-bottom: 10px; /* Consistent spacing between items */
+}
+
+.sidebar ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    display: flex; /* Flex for icon and text alignment */
+    align-items: center;
+    padding: 12px 15px; /* Padding for click area */
+    border-radius: 8px; /* Rounded corners for links */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    font-size: 1.05em;
+    font-weight: 500;
+}
+
+.sidebar ul li a:hover {
+    background-color: rgba(97, 218, 251, 0.15); /* Light React blue hover background */
+    color: #61dafb; /* React blue on hover */
+    transform: translateX(5px); /* Slight slide effect on hover */
+}
+
+.sidebar ul li a.active {
+    background-color: #61dafb; /* Solid React blue for active link */
+    color: #20232a; /* Dark text on active background */
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(97, 218, 251, 0.4); /* Stronger shadow for active */
+    transform: translateX(0); /* No slide for active */
+}
+
+/* Optional: Add space for icons if you use them */
+.sidebar ul li a svg {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px; /* More padding for content */
+    background-color: #f8f9fa; /* Slightly brighter content background */
+    border-radius: 12px; /* Rounded corners for the main content area */
+    margin: 20px; /* Margin around the main content to separate it from edges */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* Soft, larger shadow for the content area */
+    overflow-y: auto; /* Ensure content scrolls if too long */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column; /* Stack sidebar and content on small screens */
+    }
+
+    .sidebar {
+        width: 100%; /* Full width sidebar */
+        height: auto; /* Auto height */
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow at the bottom */
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .sidebar ul {
+        flex-direction: row; /* Display links in a row */
+        flex-wrap: wrap; /* Allow links to wrap */
+        justify-content: center; /* Center links */
+    }
+
+    .sidebar ul li {
+        margin: 5px 10px; /* Smaller margins for inline links */
+    }
+
+    .sidebar ul li a {
+        padding: 8px 12px; /* Smaller padding */
+        font-size: 0.95em;
+    }
+
+    .sidebar-title {
+        margin-bottom: 20px;
+    }
+
+    .main-content {
+        margin: 10px; /* Smaller margin for main content */
+        padding: 20px;
+    }
+}

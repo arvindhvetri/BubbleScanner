@@ -1,0 +1,192 @@
+/* StudentAnswers.css - Polished Version */
+
+.student-answers-container {
+    padding: 15px;
+    background: linear-gradient(135deg, #e0f2f7 0%, #f0f8ff 100%);
+    font-family: 'Inter', sans-serif;
+    min-height: 85vh; /* Ensure it takes full height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.student-answers-heading {
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    color: #2c3e50;
+    text-align: center; /* Already centered */
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.student-answers-heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #61dafb;
+    border-radius: 2px;
+}
+
+.table-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 400px;
+    flex-grow: 0;
+    border: none;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.student-answers-table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.9rem;
+    color: #34495e;
+}
+
+.student-answers-table th,
+.student-answers-table td {
+    border-bottom: 1px solid #eef2f7;
+    border-right: 1px solid #eef2f7;
+    padding: 12px 15px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.student-answers-table th {
+    background: linear-gradient(90deg, #4a90e2 0%, #61dafb 100%);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.student-answers-table th:first-child {
+    border-top-left-radius: 12px;
+}
+
+.student-answers-table th:last-child {
+    border-top-right-radius: 12px;
+    border-right: none;
+}
+
+.student-answers-table td:first-child,
+.student-answers-table th:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #f8faff;
+    z-index: 2;
+    font-weight: 600;
+    color: #2c3e50;
+    border-right: 1px solid #eef2f7;
+}
+
+.student-answers-table tbody tr:hover {
+    background-color: #f0f8ff;
+    transition: background-color 0.2s ease;
+}
+
+.student-answers-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.student-answers-table tbody tr:hover td:first-child {
+    background-color: #e0f2f7;
+}
+
+/* Download button styling */
+.download-button {
+    margin-top: auto; /* Pushes the button to the bottom */
+    padding: 12px 28px; /* More padding for a larger button */
+    background: linear-gradient(45deg, #6a82fb 0%, #fc5c7d 100%); /* Blue to Pink/Purple gradient */
+    color: white;
+    font-weight: 700; /* Bolder text */
+    font-size: 1.1rem; /* Larger font size */
+    border: none;
+    border-radius: 10px; /* More rounded corners */
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(106, 130, 251, 0.3); /* Soft blue shadow */
+    transition: all 0.3s ease; /* Smooth transitions for all properties */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 0.8px; /* Spaced out letters */
+    outline: none; /* Remove outline on focus */
+}
+
+.download-button:hover {
+    background: linear-gradient(45deg, #fc5c7d 0%, #6a82fb 100%); /* Reverse gradient on hover */
+    box-shadow: 0 12px 20px rgba(106, 130, 251, 0.4); /* Larger shadow on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+.download-button:active {
+    transform: translateY(0); /* Press down effect */
+    box-shadow: 0 5px 10px rgba(106, 130, 251, 0.2); /* Smaller shadow when pressed */
+}
+
+.download-button {
+  /* Existing button styles */
+  margin-right: 15px; /* Adds space to the right of each button */
+}
+
+.download-button:last-child {
+  margin-right: 0; /* Removes the margin from the last button */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .student-answers-container {
+        padding: 20px 15px;
+    }
+
+    .student-answers-heading {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .table-wrapper {
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        max-height: 350px;
+    }
+
+    .student-answers-table {
+        font-size: 0.8rem;
+        min-width: unset;
+    }
+
+    .student-answers-table th,
+    .student-answers-table td {
+        padding: 8px 10px;
+    }
+
+    .student-answers-table th:first-child {
+        border-top-left-radius: 8px;
+    }
+
+    .student-answers-table th:last-child {
+        border-top-right-radius: 8px;
+    }
+
+    .download-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+}
